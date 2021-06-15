@@ -25,3 +25,24 @@ class Config(object):
     SESSION_PERMANENT = False
     # 设置过期时间
     PERMANENT_SESSION_LIFETIME = 86400 * 2
+
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
+
+class ProductionConfig(Config):
+    DEBUG = False
+
+
+class TestingConfig(Config):
+    DEBUG = True
+    TESTING = True
+
+
+config = {
+    'development': DevelopmentConfig,
+
+    'production': ProductionConfig,
+    'testing': TestingConfig
+}
